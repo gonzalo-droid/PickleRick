@@ -87,12 +87,12 @@ fun BottomNavigation(items: List<BottomBarItem>, navController: NavHostControlle
                                 saveState = true
                             }
                         }
-                        launchSingleTop = true
-                        restoreState = true
+                        launchSingleTop = true // valida el fast click
+                        restoreState = true // recuperar estado de vistas anteriores
                     }
                 },
                 selected = currentDestination?.hierarchy?.any { it.route == item.route } == true,
-                alwaysShowLabel = false)
+                alwaysShowLabel = false) // show naming of text when button is selected
         }
     }
 }
