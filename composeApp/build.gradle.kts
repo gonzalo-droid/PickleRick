@@ -79,6 +79,10 @@ kotlin {
             api(libs.compose.webview.multiplatform)
 
         }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+        }
     }
 }
 
