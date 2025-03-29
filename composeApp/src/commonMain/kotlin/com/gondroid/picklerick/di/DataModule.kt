@@ -1,5 +1,6 @@
 package com.gondroid.picklerick.di
 
+import com.gondroid.picklerick.data.RepositoryImpl
 import com.gondroid.picklerick.data.remote.ApiService
 import com.gondroid.picklerick.data.remote.paging.CharactersPagingSource
 import com.gondroid.picklerick.data.remote.paging.EpisodesPagingSource
