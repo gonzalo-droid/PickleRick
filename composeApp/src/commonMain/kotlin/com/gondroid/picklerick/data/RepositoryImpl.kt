@@ -22,7 +22,7 @@ class RepositoryImpl(
 
     companion object {
         const val MAX_ITEMS = 20
-        const val PREFETCH_ITEMS = 5
+        const val PREFETCH_ITEMS = 5 // cuando queden 5 llama a los otro
     }
 
     override suspend fun getSingleCharacter(id: String): CharacterModel {

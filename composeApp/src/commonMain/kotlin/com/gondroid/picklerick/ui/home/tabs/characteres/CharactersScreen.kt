@@ -131,7 +131,7 @@ fun CharacterOfTheDay(characterModel: CharacterModel? = null) {
                 )
 
                 Box(
-                    Modifier.fillMaxSize().background(
+                    Modifier.fillMaxSize().background( // gradient
                         Brush.horizontalGradient(
                             0f to Color.Black.copy(alpha = 0.9f),
                             0.4f to Color.White.copy(alpha = 0f)
@@ -139,15 +139,18 @@ fun CharacterOfTheDay(characterModel: CharacterModel? = null) {
                     )
                 )
                 Text(
-                    characterModel.name,
+                    text = characterModel.name,
                     fontSize = 40.sp,
                     maxLines = 1,
                     minLines = 1,
                     textAlign = TextAlign.Center,
                     color = Color.White,
                     overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.padding(horizontal = 24.dp, vertical = 16.dp)
-                        .fillMaxHeight().vertical().rotate(-90f)
+                    modifier = Modifier
+                        .padding(horizontal = 24.dp, vertical = 16.dp)
+                        .fillMaxHeight()
+                        .vertical()
+                        .rotate(-90f)
                 )
             }
         }
