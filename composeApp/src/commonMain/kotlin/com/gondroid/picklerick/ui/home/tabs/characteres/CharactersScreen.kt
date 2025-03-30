@@ -35,6 +35,11 @@ import app.cash.paging.compose.collectAsLazyPagingItems
 import coil3.compose.AsyncImage
 import com.gondroid.picklerick.domain.model.CharacterModel
 import com.gondroid.picklerick.ui.core.DefaultTextColor
+import com.gondroid.picklerick.ui.core.Green
+import com.gondroid.picklerick.ui.core.components.PagingLoadingState
+import com.gondroid.picklerick.ui.core.components.PagingType
+import com.gondroid.picklerick.ui.core.components.PagingWrapper
+import com.gondroid.picklerick.ui.core.ex.vertical
 import com.gondroid.picklerick.ui.home.tabs.characteres.CharactersState
 import com.gondroid.picklerick.ui.home.tabs.characteres.CharactersViewModel
 import org.jetbrains.compose.resources.painterResource
