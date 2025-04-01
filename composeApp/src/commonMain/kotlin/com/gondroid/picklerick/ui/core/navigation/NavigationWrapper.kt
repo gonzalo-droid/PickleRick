@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.gondroid.picklerick.domain.model.CharacterModel
+import com.gondroid.picklerick.ui.detail.CharacterDetailScreen
 import com.gondroid.picklerick.ui.home.HomeScreen
 import kotlinx.serialization.json.Json
 

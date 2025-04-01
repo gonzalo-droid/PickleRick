@@ -1,4 +1,4 @@
-package com.gondroid.picklerick.ui.home.tabs.characters
+package com.gondroid.picklerick.ui.home.tabs.characteres
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -40,11 +40,11 @@ import com.gondroid.picklerick.ui.core.components.PagingLoadingState
 import com.gondroid.picklerick.ui.core.components.PagingType
 import com.gondroid.picklerick.ui.core.components.PagingWrapper
 import com.gondroid.picklerick.ui.core.ex.vertical
-import com.gondroid.picklerick.ui.home.tabs.characteres.CharactersState
-import com.gondroid.picklerick.ui.home.tabs.characteres.CharactersViewModel
 import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
+import picklerick.composeapp.generated.resources.Res
+import picklerick.composeapp.generated.resources.rickface
 
 
 @OptIn(KoinExperimentalAPI::class)
@@ -63,7 +63,8 @@ fun CharactersGridList(
     navigateToDetail: (CharacterModel) -> Unit,
 ) {
 
-    PagingWrapper(pagingType = PagingType.VERTICAL_GRID,
+    PagingWrapper(
+        pagingType = PagingType.VERTICAL_GRID,
         pagingItems = characters,
         initialView = { PagingLoadingState() },
         itemView = { CharacterItemList(it) { characterModel -> navigateToDetail(characterModel) } },
@@ -85,8 +86,10 @@ fun CharactersGridList(
 fun CharacterItemList(characterModel: CharacterModel, onItemSelected: (CharacterModel) -> Unit) {
     Box(
         modifier = Modifier.clip(RoundedCornerShape(24))
-            .border(2.dp, Green, shape = RoundedCornerShape(0, 24, 0, 24)).fillMaxWidth()
-            .height(150.dp).clickable { onItemSelected(characterModel) },
+            .border(2.dp, Green, shape = RoundedCornerShape(0, 24, 0, 24))
+            .fillMaxWidth()
+            .height(150.dp)
+            .clickable { onItemSelected(characterModel) },
         contentAlignment = Alignment.BottomCenter
     ) {
         AsyncImage(

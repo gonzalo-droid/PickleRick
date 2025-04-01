@@ -32,6 +32,7 @@ import app.cash.paging.compose.LazyPagingItems
 import app.cash.paging.compose.collectAsLazyPagingItems
 import com.gondroid.picklerick.domain.model.EpisodeModel
 import com.gondroid.picklerick.domain.model.SeasonEpisode
+import com.gondroid.picklerick.isDesktop
 import com.gondroid.picklerick.ui.core.BackgroundPrimaryColor
 import com.gondroid.picklerick.ui.core.DefaultTextColor
 import com.gondroid.picklerick.ui.core.PlaceholderColor
@@ -44,6 +45,15 @@ import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 import picklerick.composeapp.generated.resources.Res
+import picklerick.composeapp.generated.resources.placeholder
+import picklerick.composeapp.generated.resources.portal
+import picklerick.composeapp.generated.resources.season1
+import picklerick.composeapp.generated.resources.season2
+import picklerick.composeapp.generated.resources.season3
+import picklerick.composeapp.generated.resources.season4
+import picklerick.composeapp.generated.resources.season5
+import picklerick.composeapp.generated.resources.season6
+import picklerick.composeapp.generated.resources.season7
 
 @OptIn(KoinExperimentalAPI::class)
 @Composable

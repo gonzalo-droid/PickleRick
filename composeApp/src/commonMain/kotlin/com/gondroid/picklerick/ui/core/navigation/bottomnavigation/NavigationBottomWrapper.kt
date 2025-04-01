@@ -6,7 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.gondroid.picklerick.ui.core.navigation.CharacterDetail
 import com.gondroid.picklerick.ui.core.navigation.Routes
-import com.gondroid.picklerick.ui.home.tabs.characters.CharactersScreen
+import com.gondroid.picklerick.ui.home.tabs.characteres.CharactersScreen
 import com.gondroid.picklerick.ui.home.tabs.episodes.EpisodesScreen
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

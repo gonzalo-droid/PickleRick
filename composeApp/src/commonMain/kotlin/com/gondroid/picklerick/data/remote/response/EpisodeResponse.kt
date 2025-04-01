@@ -1,9 +1,10 @@
 package com.gondroid.picklerick.data.remote.response
 
-import com.aristidevs.rickmortykapp.domain.model.EpisodeModel
-import com.aristidevs.rickmortykapp.domain.model.SeasonEpisode
-import com.aristidevs.rickmortykapp.domain.model.SeasonEpisode.*
-import com.aristidevs.rickmortykapp.isDesktop
+
+import com.gondroid.picklerick.domain.model.EpisodeModel
+import com.gondroid.picklerick.domain.model.SeasonEpisode
+import com.gondroid.picklerick.domain.model.SeasonEpisode.*
+import com.gondroid.picklerick.isDesktop
 import kotlinx.serialization.Serializable
 
 @Serializable

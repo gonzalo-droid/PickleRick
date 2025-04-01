@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.gondroid.picklerick.domain.model.CharacterModel
 import com.gondroid.picklerick.domain.model.EpisodeModel
+import com.gondroid.picklerick.isDesktop
 import com.gondroid.picklerick.ui.core.BackgroundPrimaryColor
 import com.gondroid.picklerick.ui.core.BackgroundSecondaryColor
 import com.gondroid.picklerick.ui.core.BackgroundTertiaryColor
@@ -50,6 +51,8 @@ import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 import org.koin.core.parameter.parameterSetOf
 import picklerick.composeapp.generated.resources.Res
+import picklerick.composeapp.generated.resources.ic_back
+import picklerick.composeapp.generated.resources.space
 
 @OptIn(KoinExperimentalAPI::class)
 @Composable
