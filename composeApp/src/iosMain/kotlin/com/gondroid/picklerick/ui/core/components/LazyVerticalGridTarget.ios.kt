@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.cash.paging.compose.LazyPagingItems
-import com.aristidevs.rickmortykapp.ui.core.BackgroundPrimaryColor
 import com.gondroid.picklerick.ui.core.BackgroundPrimaryColor
 
 @Composable
