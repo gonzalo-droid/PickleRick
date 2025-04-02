@@ -30,6 +30,9 @@ import com.gondroid.picklerick.ui.core.navigation.bottomnavigation.BottomBarItem
 import com.gondroid.picklerick.ui.core.navigation.bottomnavigation.BottomBarItem.Characters
 import com.gondroid.picklerick.ui.core.navigation.bottomnavigation.BottomBarItem.Episodes
 import com.gondroid.picklerick.ui.core.navigation.bottomnavigation.NavigationBottomWrapper
+import org.jetbrains.compose.resources.painterResource
+import picklerick.composeapp.generated.resources.Res
+import picklerick.composeapp.generated.resources.ricktoolbar
 
 
 @Composable
@@ -58,7 +61,7 @@ fun TopBar() {
         contentAlignment = Alignment.TopCenter
     ) {
         Image(
-            imageVector = Icons.Default.Call,// painterResource(Res.drawable.ricktoolbar),
+            painter = painterResource(Res.drawable.ricktoolbar),
             null,
             modifier = Modifier.padding(start = 16.dp, top = 32.dp, bottom = 8.dp)
         )

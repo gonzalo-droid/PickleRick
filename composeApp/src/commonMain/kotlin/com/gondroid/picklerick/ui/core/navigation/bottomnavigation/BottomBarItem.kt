@@ -9,6 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gondroid.picklerick.ui.core.navigation.Routes
+import org.jetbrains.compose.resources.painterResource
+import picklerick.composeapp.generated.resources.Res
+import picklerick.composeapp.generated.resources.ic_characters
+import picklerick.composeapp.generated.resources.ic_player
 
 sealed class BottomBarItem {
     abstract val route: String
@@ -20,7 +24,7 @@ sealed class BottomBarItem {
         override val title: String = "Episodes",
         override val icon: @Composable () -> Unit = {
             Icon(
-                imageVector = Icons.Default.Home, //painterResource(Res.drawable.ic_player),
+                painter = painterResource(Res.drawable.ic_player),
                 "",
                 modifier = Modifier.size(24.dp)
             )
@@ -32,7 +36,7 @@ sealed class BottomBarItem {
         override val title: String = "Characters",
         override val icon: @Composable () -> Unit = {
             Icon(
-                imageVector = Icons.Default.Person, // painterResource(Res.drawable.ic_characters),
+                painter = painterResource(Res.drawable.ic_characters),
                 "",
                 modifier = Modifier.size(24.dp)
             )
