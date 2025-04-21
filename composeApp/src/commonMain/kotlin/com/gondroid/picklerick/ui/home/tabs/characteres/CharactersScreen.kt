@@ -71,7 +71,7 @@ fun CharactersGridList(
         header = {
             Column {
                 Text(
-                    "Characters",
+                    text = "Characters",
                     color = DefaultTextColor,
                     fontSize = 24.sp,
                     fontWeight = FontWeight.SemiBold

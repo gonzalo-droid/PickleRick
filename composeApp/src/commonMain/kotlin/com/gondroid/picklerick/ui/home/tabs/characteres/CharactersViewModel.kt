@@ -35,7 +35,7 @@ class CharactersViewModel(
     private fun getAllCharacters() {
         _state.update { state ->
             state.copy(
-                characters = repository.getAllCharacters().cachedIn(viewModelScope)
+                characters = repository.getAllCharacters().cachedIn(viewModelScope) // save cache values too stay state of pagination
             )
         }
     }
