@@ -46,6 +46,7 @@ import com.gondroid.picklerick.ui.core.Green
 import com.gondroid.picklerick.ui.core.Pink
 import com.gondroid.picklerick.ui.core.components.TextTitle
 import com.gondroid.picklerick.ui.core.ex.aliveBorder
+import io.ktor.client.plugins.SocketTimeoutException
 import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
@@ -162,7 +163,7 @@ fun MainHeader(characterModel: CharacterModel, onBackPressed: () -> Unit) {
 
 @Composable
 fun CharacterHeader(characterModel: CharacterModel) {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
+    Box(modifier = Modifier.fillMaxSize().padding(top = 16.dp), contentAlignment = Alignment.BottomCenter) {
         Column(
             modifier = Modifier.fillMaxWidth().height(100.dp)
                 .clip(RoundedCornerShape(topStartPercent = 10, topEndPercent = 10))
@@ -170,6 +171,7 @@ fun CharacterHeader(characterModel: CharacterModel) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+            Spacer(Modifier.height(20.dp))
             Text(
                 characterModel.name, color = Pink, fontSize = 20.sp, fontWeight = FontWeight.Bold
             )

@@ -22,10 +22,10 @@ val dataModule = module {
                 json(json = Json { ignoreUnknownKeys = true }, contentType = ContentType.Any)
             }
             install(DefaultRequest) {
-                url {
+                url{
                     protocol = URLProtocol.HTTPS
                     host = "rickandmortyapi.com"
-//                    parameters.append("token", "asiIOSDSA2IAMDOIM")
+//                    parameters.append("key", "")
                 }
             }
         }
@@ -33,9 +33,8 @@ val dataModule = module {
 
 
     factoryOf(::ApiService)
-    factory <Repository>{ RepositoryImpl(get(), get(), get(), get ()) }
+    factory <Repository>{ RepositoryImpl(get(), get(), get(), get()) }
     factoryOf(::CharactersPagingSource)
     factoryOf(::EpisodesPagingSource)
-
 
 }
