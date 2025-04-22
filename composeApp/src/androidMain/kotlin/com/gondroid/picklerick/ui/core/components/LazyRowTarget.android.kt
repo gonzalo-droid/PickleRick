@@ -6,7 +6,8 @@ import androidx.paging.compose.LazyPagingItems
 
 @Composable
 actual fun <T : Any> LazyRowTarget(
-    pagingItems: LazyPagingItems<T>, itemView: @Composable (T) -> Unit
+    pagingItems: LazyPagingItems<T>,
+    itemView: @Composable (T) -> Unit
 ) {
     LazyRow {
         items(pagingItems.itemCount){ pos ->

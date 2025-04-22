@@ -23,10 +23,16 @@ fun <T : Any> PagingWrapper(
     extraItemsView: @Composable () -> Unit = {},
     header: @Composable () -> Unit = {},
 ) {
-
+    /**
+     *   val refresh: LoadState
+     *   val prepend: LoadState
+     *   val append: LoadState
+     *   val source: LoadStates
+     *   val mediator: LoadStates?
+     */
     when {
         pagingItems.loadState.refresh is LoadState.Loading && pagingItems.itemCount == 0 -> {
-            //Carga inicial
+            // Loading full screen
             initialView()
         }
 

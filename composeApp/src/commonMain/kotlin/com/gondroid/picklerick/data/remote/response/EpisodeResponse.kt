@@ -3,7 +3,14 @@ package com.gondroid.picklerick.data.remote.response
 
 import com.gondroid.picklerick.domain.model.EpisodeModel
 import com.gondroid.picklerick.domain.model.SeasonEpisode
-import com.gondroid.picklerick.domain.model.SeasonEpisode.*
+import com.gondroid.picklerick.domain.model.SeasonEpisode.SEASON_1
+import com.gondroid.picklerick.domain.model.SeasonEpisode.SEASON_2
+import com.gondroid.picklerick.domain.model.SeasonEpisode.SEASON_3
+import com.gondroid.picklerick.domain.model.SeasonEpisode.SEASON_4
+import com.gondroid.picklerick.domain.model.SeasonEpisode.SEASON_5
+import com.gondroid.picklerick.domain.model.SeasonEpisode.SEASON_6
+import com.gondroid.picklerick.domain.model.SeasonEpisode.SEASON_7
+import com.gondroid.picklerick.domain.model.SeasonEpisode.UNKNOWN
 import com.gondroid.picklerick.isDesktop
 import kotlinx.serialization.Serializable
 
