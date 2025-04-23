@@ -46,7 +46,6 @@ import com.gondroid.picklerick.ui.core.Green
 import com.gondroid.picklerick.ui.core.Pink
 import com.gondroid.picklerick.ui.core.components.TextTitle
 import com.gondroid.picklerick.ui.core.ex.aliveBorder
-import io.ktor.client.plugins.SocketTimeoutException
 import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
@@ -89,7 +88,7 @@ fun CharacterDetailScreen(characterModel: CharacterModel, onBackPressed: () -> U
 fun CharacterEpisodesList(episodes: List<EpisodeModel>?) {
     ElevatedCard(
         modifier = Modifier.padding(horizontal = 16.dp).fillMaxWidth(),
-        colors = CardDefaults.elevatedCardColors().copy(containerColor = BackgroundTertiaryColor)
+        colors = CardDefaults.elevatedCardColors(containerColor = BackgroundTertiaryColor)
     ) {
         Box(modifier = Modifier.padding(16.dp), contentAlignment = Alignment.Center) {
             if (episodes == null) {
@@ -119,7 +118,7 @@ fun EpisodeItem(episode: EpisodeModel) {
 fun CharacterInformation(characterModel: CharacterModel) {
     ElevatedCard(
         modifier = Modifier.padding(16.dp).fillMaxWidth(),
-        colors = CardDefaults.elevatedCardColors().copy(containerColor = BackgroundTertiaryColor)
+        colors = CardDefaults.elevatedCardColors(containerColor = BackgroundTertiaryColor)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             TextTitle("About the character")
@@ -163,7 +162,10 @@ fun MainHeader(characterModel: CharacterModel, onBackPressed: () -> Unit) {
 
 @Composable
 fun CharacterHeader(characterModel: CharacterModel) {
-    Box(modifier = Modifier.fillMaxSize().padding(top = 16.dp), contentAlignment = Alignment.BottomCenter) {
+    Box(
+        modifier = Modifier.fillMaxSize().padding(top = 16.dp),
+        contentAlignment = Alignment.BottomCenter
+    ) {
         Column(
             modifier = Modifier.fillMaxWidth().height(100.dp)
                 .clip(RoundedCornerShape(topStartPercent = 10, topEndPercent = 10))

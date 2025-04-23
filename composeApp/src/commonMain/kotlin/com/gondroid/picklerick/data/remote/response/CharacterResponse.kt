@@ -13,7 +13,7 @@ data class CharacterResponse(
     val species:String,
     val gender:String,
     val origin:OriginResponse,
-    val episode:List<String>
+    val episode:List<String> // room dont reconice List
 ) {
     fun toDomain(): CharacterModel {
         return CharacterModel(

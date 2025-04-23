@@ -100,7 +100,7 @@ fun EpisodePlayer(playVideo: String, onCloseVideo: () -> Unit) {
         } else {
             ElevatedCard(
                 modifier = Modifier.fillMaxWidth().padding(16.dp),
-                colors = CardDefaults.elevatedCardColors().copy(containerColor = PlaceholderColor)
+                colors = CardDefaults.elevatedCardColors(containerColor = PlaceholderColor)
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(painter = painterResource(Res.drawable.placeholder), null)

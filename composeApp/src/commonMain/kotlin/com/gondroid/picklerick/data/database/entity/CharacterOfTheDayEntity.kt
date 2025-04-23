@@ -29,6 +29,7 @@ data class CharacterOfTheDayEntity(
                 gender = gender,
                 origin = origin,
                 episodes = Json.decodeFromString<List<String>>(episodes)
+                // list to json to save in room
             ), selectedDay = selectedDay
         )
     }
