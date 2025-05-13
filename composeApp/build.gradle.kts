@@ -23,7 +23,9 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
+    jvm("desktop")
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -34,8 +36,10 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
+        val desktopMain by getting
+
         task("testClasses") // bug IDE
         androidMain.dependencies {
             implementation(compose.preview)
@@ -82,6 +86,12 @@ kotlin {
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }
+
+        desktopMain.dependencies {
+            implementation(compose.desktop.currentOs)
+            implementation(libs.kotlinx.coroutines.swing)
+            implementation(libs.ktor.client.cio)
+        }
     }
 }
 
@@ -123,7 +133,50 @@ ksp {
 dependencies {
     add("kspCommonMainMetadata", libs.room.compiler)
     add("kspAndroid", libs.room.compiler)
+    add("kspDesktop", libs.room.compiler)
     add("kspIosX64", libs.room.compiler)
     add("kspIosArm64", libs.room.compiler)
     add("kspIosSimulatorArm64", libs.room.compiler)
+}
+
+compose.desktop {
+    application {
+        mainClass = "com.gondroid.picklerick.MainKt" // main.kt
+        nativeDistributions {
+
+            targetFormats(
+                TargetFormat.Dmg, // mac
+                TargetFormat.Msi, // window
+                TargetFormat.Deb // linux
+            )
+            packageName = "com.gondroid.picklerick"
+            version = "1.0.0"
+
+            macOS {
+                iconFile.set(project.file("resources/icon.icns"))
+            }
+
+//            windows{
+//                iconFile.set(project.file("resources/icon.ico"))
+//            }
+
+        }
+
+        afterEvaluate {
+            tasks.withType<JavaExec> {
+                jvmArgs("--add-opens", "java.desktop/sun.awt=ALL-UNNAMED")
+                jvmArgs(
+                    "--add-opens",
+                    "java.desktop/java.awt.peer=ALL-UNNAMED"
+                )
+
+                if (System.getProperty("os.name").contains("Mac")) {
+                    jvmArgs("--add-opens", "java.desktop/sun.awt=ALL-UNNAMED")
+                    jvmArgs("--add-opens", "java.desktop/sun.lwawt=ALL-UNNAMED")
+                    jvmArgs("--add-opens", "java.desktop/sun.lwawt.macosx=ALL-UNNAMED")
+                }
+            }
+        }
+
+    }
 }
