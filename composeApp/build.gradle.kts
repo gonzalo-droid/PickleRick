@@ -152,9 +152,10 @@ compose.desktop {
             packageName = "com.gondroid.picklerick"
             version = "1.0.0"
 
+            /*
             macOS {
                 iconFile.set(project.file("resources/icon.icns"))
-            }
+            }*/
 
 //            windows{
 //                iconFile.set(project.file("resources/icon.ico"))
